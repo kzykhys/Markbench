@@ -4,23 +4,24 @@ Markdown Benchmarks (PHP)
 All parsers are managed by composer (minimum-stability=stable).
 Tested with latest stable version.
 
-[**See the latest benchmark on Travis-CI**][]
+[**See the latest benchmark on Travis-CI**](https://travis-ci.org/kzykhys/Markbench)
 
 ```
 $ php bin/markbench benchmark --profile=github-sample
-Profile: Sample content from Github (http://github.github.com/github-flavored-markdown/sample_content.html) / 1000 times
-         Markbench\Profile\GithubSampleProfile
 Runtime: PHP5.5.3
 Host:    Linux vm1 3.8.0-31-generic #46-Ubuntu SMP Tue Sep 10 20:03:44 UTC 2013 x86_64
-+--------------------------------+---------------+---------+--------------+
-| package                        | duration (MS) | MEM (B) | PEAK MEM (B) |
-+--------------------------------+---------------+---------+--------------+
-| erusev/parsedown (default)     | 10609         | 6029312 | 6029312      |
-| michelf/php-markdown (default) | 36426         | 6553600 | 6553600      |
-| michelf/php-markdown (extra)   | 48915         | 6553600 | 6815744      |
-| kzykhys/ciconia (default)      | 63964         | 6815744 | 7077888      |
-| kzykhys/ciconia (gfm)          | 68512         | 7077888 | 7340032      |
-+--------------------------------+---------------+---------+--------------+
+Profile: Sample content from Github (http://github.github.com/github-flavored-markdown/sample_content.html) / 1000 times
+Class:   Markbench\Profile\GithubSampleProfile
+
++----------------------+---------+---------+---------------+---------+--------------+
+| package              | version | dialect | duration (MS) | MEM (B) | PEAK MEM (B) |
++----------------------+---------+---------+---------------+---------+--------------+
+| erusev/parsedown     | 0.4.6   |         | 10819         | 6291456 | 6553600      |
+| michelf/php-markdown | 1.3     |         | 36887         | 6815744 | 6815744      |
+| michelf/php-markdown | 1.3     | extra   | 49626         | 6815744 | 7340032      |
+| kzykhys/ciconia      | v0.1.4  |         | 64959         | 7340032 | 7602176      |
+| kzykhys/ciconia      | v0.1.4  | gfm     | 68987         | 7077888 | 7602176      |
++----------------------+---------+---------+---------------+---------+--------------+
 ```
 
 Tested parsers
