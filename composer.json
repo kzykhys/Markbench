@@ -1,0 +1,23 @@
+{
+    "name": "kzykhys/markbench",
+    "description": "The markdown benchmark framework",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Kazuyuki Hayashi",
+            "email": "hayashi@valnur.net"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    },
+    "require": {
+        "kzykhys/parallel": "dev-master",
+        "symfony/stopwatch": "~2.3",
+        "kzykhys/ciconia": "*",
+        "michelf/php-markdown": "*",
+        "erusev/parsedown": "*"
+    }
+}
