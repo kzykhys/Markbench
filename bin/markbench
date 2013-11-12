@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+
+if (PHP_SAPI !== 'cli') {
+    echo 'Markbench should be run on the CLI environment.' . PHP_EOL;
+}
+
+$paths = [
+    __DIR__ . '/../vendor/autoload.php',
+    __DIR__ . '/../../../autoload.php',
+];
+
+foreach($paths as $path) {
+    if (file_exists($path)) {
+        require $path;
+        break;
+    }
+}
+
+$app = new \Symfony\Component\Console\Application('Ciconia', 'dev-master');
+$app->add(new \Markbench\Console\Command\BenchmarkCommand());
+$app->run();

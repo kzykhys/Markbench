@@ -2,27 +2,27 @@
 
 namespace Markbench\Driver;
 
-use Ciconia\Ciconia;
 use Markbench\DriverInterface;
 use Markbench\Exception\UnsupportedDriverException;
+use Michelf\Markdown;
 
 /**
  * @author Kazuyuki Hayashi <hayashi@valnur.net>
  */
-class CiconiaDriver implements DriverInterface
+class PHPMarkdownDriver implements DriverInterface
 {
 
     /**
-     * @var Ciconia
+     * @var Markdown
      */
-    protected $ciconia;
+    protected $phpMarkdown;
 
     /**
      * {@inheritdoc}
      */
     public function initialize()
     {
-        $this->ciconia = new Ciconia();
+        $this->phpMarkdown = new Markdown();
     }
 
     /**
@@ -30,7 +30,7 @@ class CiconiaDriver implements DriverInterface
      */
     public function run($markdown = '')
     {
-        return $this->ciconia->render($markdown);
+        return $this->phpMarkdown->defaultTransform($markdown);
     }
 
     /**
@@ -38,7 +38,7 @@ class CiconiaDriver implements DriverInterface
      */
     public function getName()
     {
-        return 'kzykhys/ciconia';
+        return 'michelf/php-markdown';
     }
 
     /**
@@ -54,9 +54,8 @@ class CiconiaDriver implements DriverInterface
      */
     public function checkRequirements()
     {
-        if (!class_exists('Ciconia\\Ciconia')) {
+        if (!class_exists('Michelf\\Markdown')) {
             throw new UnsupportedDriverException();
         }
     }
-
 }

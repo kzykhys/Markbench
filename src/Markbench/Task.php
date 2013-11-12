@@ -4,6 +4,9 @@ namespace Markbench;
 
 use Symfony\Component\Stopwatch\Stopwatch;
 
+/**
+ * @author Kazuyuki Hayashi <hayashi@valnur.net>
+ */
 class Task
 {
 
@@ -15,7 +18,12 @@ class Task
     /**
      * @var string
      */
-    private $content;
+    private $content = '';
+
+    /**
+     * @var int
+     */
+    private $loopCount = 1000;
 
     /**
      * @param DriverInterface $driver
@@ -37,13 +45,37 @@ class Task
         return $this;
     }
 
+    /**
+     * @param int $loopCount
+     *
+     * @return $this
+     */
+    public function setLoopCount($loopCount)
+    {
+        $this->loopCount = $loopCount;
+
+        return $this;
+    }
+
+    /**
+     * @return Result
+     */
     public function run()
     {
         $stopwatch = new Stopwatch();
+        $result    = '';
 
+        $stopwatch->start('parsing');
         $this->driver->initialize();
+        $stopwatch->lap('parsing');
 
-        return array('foo');
+        for ($i = 0; $i < $this->loopCount; $i++) {
+            $result = $this->driver->run($this->content);
+        }
+
+        $event = $stopwatch->stop('parsing');
+
+        return new Result($this->driver->getName(), $this->driver->getDialect(), $event, $result, memory_get_peak_usage(true));
     }
 
 } 

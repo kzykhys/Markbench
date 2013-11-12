@@ -1,0 +1,14 @@
+language: php
+
+php:
+    - 5.5
+    - 5.4
+
+before_script:
+    - curl -s http://getcomposer.org/installer | php
+    - php composer.phar install --dev --no-interaction
+
+script:
+    - php bin/markbench benchmark --profile=blank
+    - php bin/markbench benchmark --profile=default
+    - php bin/markbench benchmark --profile=github-sample

@@ -2,27 +2,26 @@
 
 namespace Markbench\Driver;
 
-use Ciconia\Ciconia;
 use Markbench\DriverInterface;
 use Markbench\Exception\UnsupportedDriverException;
 
 /**
  * @author Kazuyuki Hayashi <hayashi@valnur.net>
  */
-class CiconiaDriver implements DriverInterface
+class ParsedownDriver implements DriverInterface
 {
 
     /**
-     * @var Ciconia
+     * @var \Parsedown
      */
-    protected $ciconia;
+    private $parsedown;
 
     /**
      * {@inheritdoc}
      */
     public function initialize()
     {
-        $this->ciconia = new Ciconia();
+        $this->parsedown = \Parsedown::instance();
     }
 
     /**
@@ -30,7 +29,7 @@ class CiconiaDriver implements DriverInterface
      */
     public function run($markdown = '')
     {
-        return $this->ciconia->render($markdown);
+        return $this->parsedown->parse($markdown);
     }
 
     /**
@@ -38,7 +37,7 @@ class CiconiaDriver implements DriverInterface
      */
     public function getName()
     {
-        return 'kzykhys/ciconia';
+        return 'erusev/parsedown';
     }
 
     /**
@@ -54,9 +53,8 @@ class CiconiaDriver implements DriverInterface
      */
     public function checkRequirements()
     {
-        if (!class_exists('Ciconia\\Ciconia')) {
+        if (!class_exists('Parsedown')) {
             throw new UnsupportedDriverException();
         }
     }
-
-}
+} 
