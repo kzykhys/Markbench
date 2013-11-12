@@ -1,6 +1,8 @@
 {
     "name": "kzykhys/markbench",
     "description": "The markdown benchmark framework",
+    "keywords": ["markdown", "benchmark"],
+    "license": "MIT",
     "minimum-stability": "stable",
     "authors": [
         {
@@ -22,5 +24,6 @@
         "kzykhys/ciconia": "*",
         "michelf/php-markdown": "*",
         "erusev/parsedown": "*"
-    }
+    },
+    "bin": ["bin/markbench"]
 }
