@@ -36,10 +36,13 @@ Add a parser
 * Put your class that implements `Markbench\DriverInterface` into `Driver` directory.
 * Run command again
 
+**Feel free to fork and send a pull request!**
+
 Run a benchmark
 ---------------
 
 ```
+composer install
 php bin/markbench benchmark
 ```
 
@@ -69,3 +72,15 @@ Options:
 
 * Put your class that implements `Markbench\ProfileInterface` into `Profile` directory.
 * Run `php bin/markbench benchmark --profile=your_profile_name`
+
+**Feel free to fork and send a pull request!**
+
+License
+-------
+
+The MIT License
+
+Author
+------
+
+Kazuyuki Hayashi (@kzykhys)
