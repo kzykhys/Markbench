@@ -31,6 +31,25 @@ Tested parsers
 * kzykhys/ciconia (Github, Packagist)
 * erusev/parsedown (Github, Packagist)
 
+Internals
+---------
+
+Each parser is executed asynchronously using [kzykhys/Parallel.php](https://github.com/kzykhys/Parallel.php)
+
+```
+Runner
+ +-->(kzykhys/Parallel.php)
+        +-- child process #1 --+
+        +-- child process #2 --+--> output
+        +-- child process #3 --+
+        |-- duration/mem usage --|
+```
+
+### Requirements
+
+* PHP5.4+
+* Compiled with --enable-pcntl
+
 Add a parser
 ------------
 
