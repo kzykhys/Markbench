@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "e667a07fb3519c32e8b12770f9b95f19",
+    "hash": "09f994dbf88346e6a2a03f5de3a4c52d",
     "packages": [
         {
             "name": "composer/composer",
@@ -76,16 +76,16 @@
         },
         {
             "name": "erusev/parsedown",
-            "version": "0.4.6",
+            "version": "0.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown.git",
-                "reference": "df3db716981e632305b46e47510d81b5428b1068"
+                "reference": "a4fb0651d54e66f705fec3194e8c42f2a4d9ea6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/df3db716981e632305b46e47510d81b5428b1068",
-                "reference": "df3db716981e632305b46e47510d81b5428b1068",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/a4fb0651d54e66f705fec3194e8c42f2a4d9ea6b",
+                "reference": "a4fb0651d54e66f705fec3194e8c42f2a4d9ea6b",
                 "shasum": ""
             },
             "type": "library",
@@ -111,7 +111,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2013-11-10 09:02:18"
+            "time": "2013-11-12 23:07:39"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -170,16 +170,16 @@
         },
         {
             "name": "kzykhys/ciconia",
-            "version": "v0.1.4",
+            "version": "v0.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kzykhys/Ciconia.git",
-                "reference": "88e43e4ef6832927b57ebece5f909dd6fb0f5f4f"
+                "reference": "eb7b71ffdfe245b229e8345f9c918e88126b54e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kzykhys/Ciconia/zipball/88e43e4ef6832927b57ebece5f909dd6fb0f5f4f",
-                "reference": "88e43e4ef6832927b57ebece5f909dd6fb0f5f4f",
+                "url": "https://api.github.com/repos/kzykhys/Ciconia/zipball/eb7b71ffdfe245b229e8345f9c918e88126b54e6",
+                "reference": "eb7b71ffdfe245b229e8345f9c918e88126b54e6",
                 "shasum": ""
             },
             "require": {
@@ -215,7 +215,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2013-11-07 10:20:46"
+            "time": "2013-11-12 06:09:00"
         },
         {
             "name": "kzykhys/parallel",
