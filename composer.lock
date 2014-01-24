@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "f134e09f458f99e13629331b95c6831070173c9a"
+                "reference": "7adc41d02c3536b3e19a6b906cf0c4cf6d3beb70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/f134e09f458f99e13629331b95c6831070173c9a",
-                "reference": "f134e09f458f99e13629331b95c6831070173c9a",
+                "url": "https://api.github.com/repos/composer/composer/zipball/7adc41d02c3536b3e19a6b906cf0c4cf6d3beb70",
+                "reference": "7adc41d02c3536b3e19a6b906cf0c4cf6d3beb70",
                 "shasum": ""
             },
             "require": {
@@ -25,7 +25,7 @@
                 "seld/jsonlint": "1.*",
                 "symfony/console": "~2.3",
                 "symfony/finder": "~2.2",
-                "symfony/process": "~2.1@dev"
+                "symfony/process": "~2.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "~3.7.10"
@@ -72,20 +72,20 @@
                 "dependency",
                 "package"
             ],
-            "time": "2013-11-11 13:41:21"
+            "time": "2014-01-20 18:10:11"
         },
         {
             "name": "erusev/parsedown",
-            "version": "0.4.7",
+            "version": "0.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown.git",
-                "reference": "a4fb0651d54e66f705fec3194e8c42f2a4d9ea6b"
+                "reference": "f0fbdaa6ca02e7437da12cc40ff7ea1af380a4ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/a4fb0651d54e66f705fec3194e8c42f2a4d9ea6b",
-                "reference": "a4fb0651d54e66f705fec3194e8c42f2a4d9ea6b",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/f0fbdaa6ca02e7437da12cc40ff7ea1af380a4ba",
+                "reference": "f0fbdaa6ca02e7437da12cc40ff7ea1af380a4ba",
                 "shasum": ""
             },
             "type": "library",
@@ -111,7 +111,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2013-11-12 23:07:39"
+            "time": "2014-01-22 19:28:29"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -170,30 +170,36 @@
         },
         {
             "name": "kzykhys/ciconia",
-            "version": "v0.1.5",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kzykhys/Ciconia.git",
-                "reference": "eb7b71ffdfe245b229e8345f9c918e88126b54e6"
+                "reference": "52d43ec35a656ef1bda07fdd8398081801f960ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kzykhys/Ciconia/zipball/eb7b71ffdfe245b229e8345f9c918e88126b54e6",
-                "reference": "eb7b71ffdfe245b229e8345f9c918e88126b54e6",
+                "url": "https://api.github.com/repos/kzykhys/Ciconia/zipball/52d43ec35a656ef1bda07fdd8398081801f960ae",
+                "reference": "52d43ec35a656ef1bda07fdd8398081801f960ae",
                 "shasum": ""
             },
             "require": {
                 "php": ">5.4.0",
-                "symfony/console": "2.3.x",
-                "symfony/options-resolver": "2.3.x"
+                "symfony/console": ">=2.3,<2.5-dev",
+                "symfony/options-resolver": ">=2.3,<2.5-dev"
             },
             "require-dev": {
-                "symfony/finder": "2.3.x"
+                "symfony/finder": ">=2.3,<2.5-dev",
+                "symfony/stopwatch": ">=2.3,<2.5-dev"
             },
             "bin": [
                 "bin/ciconia"
             ],
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "": "src/"
@@ -215,7 +221,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2013-11-12 06:09:00"
+            "time": "2014-01-23 08:14:37"
         },
         {
             "name": "kzykhys/parallel",
@@ -252,16 +258,16 @@
         },
         {
             "name": "michelf/php-markdown",
-            "version": "1.3",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/michelf/php-markdown.git",
-                "reference": "fcdd3e0781ae40c2b9847874e0755ff4f5559688"
+                "reference": "96d8150406f67e683ef4acc09fef91785fef1266"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/fcdd3e0781ae40c2b9847874e0755ff4f5559688",
-                "reference": "fcdd3e0781ae40c2b9847874e0755ff4f5559688",
+                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/96d8150406f67e683ef4acc09fef91785fef1266",
+                "reference": "96d8150406f67e683ef4acc09fef91785fef1266",
                 "shasum": ""
             },
             "require": {
@@ -270,7 +276,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-lib": "1.3.x-dev"
+                    "dev-lib": "1.4.x-dev"
                 }
             },
             "autoload": {
@@ -299,7 +305,7 @@
             "keywords": [
                 "markdown"
             ],
-            "time": "2013-04-11 18:53:11"
+            "time": "2013-11-29 17:09:24"
         },
         {
             "name": "seld/jsonlint",
@@ -350,17 +356,17 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.3.6",
+            "version": "v2.4.1",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "f880062d56edefb25b36f2defa65aafe65959dc7"
+                "reference": "4c1ed2ff514bd85ee186eebb010ccbdeeab05af7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/f880062d56edefb25b36f2defa65aafe65959dc7",
-                "reference": "f880062d56edefb25b36f2defa65aafe65959dc7",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/4c1ed2ff514bd85ee186eebb010ccbdeeab05af7",
+                "reference": "4c1ed2ff514bd85ee186eebb010ccbdeeab05af7",
                 "shasum": ""
             },
             "require": {
@@ -375,7 +381,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -399,21 +405,21 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2013-09-25 06:04:15"
+            "time": "2014-01-01 08:14:50"
         },
         {
             "name": "symfony/finder",
-            "version": "v2.3.6",
+            "version": "v2.4.1",
             "target-dir": "Symfony/Component/Finder",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "a175521f680b178e63c5d0ab87c6b046c0990c3f"
+                "reference": "6904345cf2b3bbab1f6d6e4ce1724cb99df9f00a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/a175521f680b178e63c5d0ab87c6b046c0990c3f",
-                "reference": "a175521f680b178e63c5d0ab87c6b046c0990c3f",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/6904345cf2b3bbab1f6d6e4ce1724cb99df9f00a",
+                "reference": "6904345cf2b3bbab1f6d6e4ce1724cb99df9f00a",
                 "shasum": ""
             },
             "require": {
@@ -422,7 +428,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -446,21 +452,21 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "http://symfony.com",
-            "time": "2013-09-19 09:45:20"
+            "time": "2014-01-01 08:14:50"
         },
         {
             "name": "symfony/options-resolver",
-            "version": "v2.3.6",
+            "version": "v2.4.1",
             "target-dir": "Symfony/Component/OptionsResolver",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/OptionsResolver.git",
-                "reference": "d7a1df61ce5cb0c9c9e502f959d4d8ede532439a"
+                "reference": "2b7145803c970e62ac521b2b0984b4bb67209561"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/OptionsResolver/zipball/d7a1df61ce5cb0c9c9e502f959d4d8ede532439a",
-                "reference": "d7a1df61ce5cb0c9c9e502f959d4d8ede532439a",
+                "url": "https://api.github.com/repos/symfony/OptionsResolver/zipball/2b7145803c970e62ac521b2b0984b4bb67209561",
+                "reference": "2b7145803c970e62ac521b2b0984b4bb67209561",
                 "shasum": ""
             },
             "require": {
@@ -469,7 +475,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -498,21 +504,21 @@
                 "configuration",
                 "options"
             ],
-            "time": "2013-09-19 09:45:20"
+            "time": "2013-09-19 09:47:34"
         },
         {
             "name": "symfony/process",
-            "version": "v2.3.6",
+            "version": "v2.4.1",
             "target-dir": "Symfony/Component/Process",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Process.git",
-                "reference": "81191e354fe9dad0451036ccf0fdf283649d3f1e"
+                "reference": "58fdccb311e44f28866f976c2d7b3227e9f713db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Process/zipball/81191e354fe9dad0451036ccf0fdf283649d3f1e",
-                "reference": "81191e354fe9dad0451036ccf0fdf283649d3f1e",
+                "url": "https://api.github.com/repos/symfony/Process/zipball/58fdccb311e44f28866f976c2d7b3227e9f713db",
+                "reference": "58fdccb311e44f28866f976c2d7b3227e9f713db",
                 "shasum": ""
             },
             "require": {
@@ -521,7 +527,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -545,21 +551,21 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "http://symfony.com",
-            "time": "2013-10-09 21:17:57"
+            "time": "2014-01-05 02:10:50"
         },
         {
             "name": "symfony/stopwatch",
-            "version": "v2.3.6",
+            "version": "v2.4.1",
             "target-dir": "Symfony/Component/Stopwatch",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Stopwatch.git",
-                "reference": "1f951fa881d2e661525e81ee0afc97261ad43459"
+                "reference": "c8e21e1380c7eef6197a8165620da8457b7c69a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Stopwatch/zipball/1f951fa881d2e661525e81ee0afc97261ad43459",
-                "reference": "1f951fa881d2e661525e81ee0afc97261ad43459",
+                "url": "https://api.github.com/repos/symfony/Stopwatch/zipball/c8e21e1380c7eef6197a8165620da8457b7c69a5",
+                "reference": "c8e21e1380c7eef6197a8165620da8457b7c69a5",
                 "shasum": ""
             },
             "require": {
@@ -568,7 +574,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -592,7 +598,7 @@
             ],
             "description": "Symfony Stopwatch Component",
             "homepage": "http://symfony.com",
-            "time": "2013-09-19 09:45:20"
+            "time": "2013-12-12 16:06:47"
         }
     ],
     "packages-dev": [
