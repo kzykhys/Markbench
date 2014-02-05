@@ -63,7 +63,7 @@ Run a benchmark
 
 ```
 composer install
-php bin/markbench benchmark
+bin/markbench benchmark
 ```
 
 ```
