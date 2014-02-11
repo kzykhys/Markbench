@@ -53,8 +53,7 @@ class ParsedownDriver implements DriverInterface
      */
     public function checkRequirements()
     {
-        if (!class_exists('Parsedown')) {
-            throw new UnsupportedDriverException();
-        }
+        return class_exists('Parsedown');
     }
-} 
+
+}

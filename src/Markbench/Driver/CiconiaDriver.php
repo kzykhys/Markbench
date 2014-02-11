@@ -54,9 +54,7 @@ class CiconiaDriver implements DriverInterface
      */
     public function checkRequirements()
     {
-        if (!class_exists('Ciconia\\Ciconia')) {
-            throw new UnsupportedDriverException();
-        }
+        return class_exists('Ciconia\\Ciconia');
     }
 
 }

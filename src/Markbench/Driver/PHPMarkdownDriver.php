@@ -54,8 +54,7 @@ class PHPMarkdownDriver implements DriverInterface
      */
     public function checkRequirements()
     {
-        if (!class_exists('Michelf\\Markdown')) {
-            throw new UnsupportedDriverException();
-        }
+        return class_exists('Michelf\\Markdown');
     }
+
 }

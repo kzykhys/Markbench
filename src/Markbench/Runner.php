@@ -13,7 +13,7 @@ class Runner
     /**
      * @var DriverInterface[]
      */
-    private $drivers;
+    private $drivers = [];
 
     /**
      * @param DriverInterface $driver
