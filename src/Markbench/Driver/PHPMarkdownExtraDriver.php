@@ -26,4 +26,13 @@ class PHPMarkdownExtraDriver extends PHPMarkdownDriver
         return 'extra';
     }
 
-} 
+
+    /**
+     * {@inheritdoc}
+     */
+    public function checkRequirements()
+    {
+        return (parent::checkRequirements() AND class_exists('Michelf\\MarkdownExtra'));
+    }
+
+}

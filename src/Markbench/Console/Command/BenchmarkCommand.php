@@ -32,7 +32,8 @@ class BenchmarkCommand extends Command
     {
         $this
             ->setName('benchmark')
-            ->setDescription('Run a benchmark with selected profile')
+            ->setDescription('Run a benchmark with selected parser and profile')
+            ->addOption('parser', '', InputOption::VALUE_REQUIRED, 'Name of a parser. Available: Ciconia, Parsedown, PHPMarkdown')
             ->addOption('profile', 'p', InputOption::VALUE_OPTIONAL, 'Name of a profile', 'default')
         ;
     }
@@ -43,12 +44,12 @@ class BenchmarkCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $runner = new Runner();
-        $this->registerDrivers($runner);
+        $this->registerDrivers($runner, $input->getOption('parser'));
 
         $profiles = $this->getProfiles();
         $profile  = $input->getOption('profile');
 
-        if (!isset($profiles)) {
+        if (!isset($profiles[$profile])) {
             $output->writeln('<error>Unknown profile: ' . $profile . '</error>');
 
             return 1;
@@ -138,8 +139,9 @@ class BenchmarkCommand extends Command
 
     /**
      * @param Runner $runner
+     * @param string $parserName Name of parser to include drivers for
      */
-    protected function registerDrivers(Runner $runner)
+    protected function registerDrivers(Runner $runner, $parserName)
     {
         $finder = Finder::create()
             ->in(__DIR__ . '/../../Driver')
@@ -150,9 +152,18 @@ class BenchmarkCommand extends Command
             /* @var \Symfony\Component\Finder\SplFileInfo $file */
 
             $className = str_replace('.php', '', $file->getRelativePathname());
-            $fqcn      = 'Markbench\\Driver\\' . $className;
 
-            $runner->addDriver(new $fqcn());
+            $fqcn      = 'Markbench\\Driver\\' . $className;
+            $driver = new $fqcn();
+
+            $matchParser = (!$parserName || in_array($parserName, [
+                $driver->getName(),
+                $driver->getName().':'.$driver->getDialect()
+            ]));
+
+            if ($matchParser && $driver->checkRequirements()) {
+                $runner->addDriver($driver);
+            }
         }
     }
 
@@ -177,4 +188,4 @@ class BenchmarkCommand extends Command
         return $package->getPrettyVersion();
     }
 
-} 
+}

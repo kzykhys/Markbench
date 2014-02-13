@@ -41,8 +41,7 @@ interface DriverInterface
     public function getDialect();
 
     /**
-     * @throws UnsupportedDriverException
-     * @return void
+     * @return boolean
      */
     public function checkRequirements();
 
