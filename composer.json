@@ -16,7 +16,7 @@
         }
     },
     "require": {
-        "composer/composer": "1.0.*@dev",
+        "composer/composer": "*@dev",
         "symfony/console": "~2.3",
         "symfony/finder": "~2.3",
         "kzykhys/parallel": "dev-master",
