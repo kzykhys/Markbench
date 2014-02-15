@@ -26,7 +26,8 @@
     "require-dev": {
         "kzykhys/ciconia": "*",
         "michelf/php-markdown": "*",
-        "erusev/parsedown": "*"
+        "erusev/parsedown": "*",
+        "cebe/markdown": "*"
     },
     "bin": ["bin/markbench"]
 }
