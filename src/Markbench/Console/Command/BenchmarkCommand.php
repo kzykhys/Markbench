@@ -193,7 +193,7 @@ class BenchmarkCommand extends Command
             throw new \RuntimeException('Unable to find composer.json');
         }
 
-        $composer   = Factory::create(new NullIO(), __DIR__.'/../../../../composer.json');
+        $composer   = Factory::create(new NullIO(), $json_path);
         $repository = $composer->getRepositoryManager()->getLocalRepository();
         /* @var \Composer\Package\Package[] $packages */
         $packages   = $repository->findPackages($package);
