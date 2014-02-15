@@ -8,6 +8,7 @@ use Markbench\Exception\TooMuchPackageFoundException;
 use Markbench\ProfileInterface;
 use Markbench\Result;
 use Markbench\Runner;
+use PHPGit\Git;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -169,23 +170,44 @@ class BenchmarkCommand extends Command
 
     /**
      * @param $package
-     * @return string
+     *
+     * @throws \RuntimeException
      * @throws \Markbench\Exception\TooMuchPackageFoundException
+     * @return string
      */
     protected function getVersion($package)
     {
-        $composer   = Factory::create(new NullIO(), __DIR__.'/../../../../composer.json');
-        $repository = $composer->getRepositoryManager()->getLocalRepository();
-        $packages   = $repository->findPackages($package);
+        $json_path = '';
+        $json_paths = [
+            __DIR__.'/../../../../composer.json',
+            __DIR__.'/../../../../../../composer.json',
+        ];
 
-        if (count($packages) > 1) {
-            throw new TooMuchPackageFoundException();
+        foreach ($json_paths as $path) {
+            if (file_exists($path)) {
+                $json_path = $path;
+            }
         }
 
-        /* @var \Composer\Package\Package $package */
-        $package = $packages[0];
+        if (!$json_path) {
+            throw new \RuntimeException('Unable to find composer.json');
+        }
 
-        return $package->getPrettyVersion();
+        $composer   = Factory::create(new NullIO(), __DIR__.'/../../../../composer.json');
+        $repository = $composer->getRepositoryManager()->getLocalRepository();
+        /* @var \Composer\Package\Package[] $packages */
+        $packages   = $repository->findPackages($package);
+
+        if ($count = count($packages) > 1) {
+            throw new TooMuchPackageFoundException();
+        } elseif ($count == 0) {
+            $git = new Git();
+            $git->setRepository(dirname($json_path));
+
+            return $git->describe->tags();
+        } else {
+            return $packages[0]->getPrettyVersion();
+        }
     }
 
 }
