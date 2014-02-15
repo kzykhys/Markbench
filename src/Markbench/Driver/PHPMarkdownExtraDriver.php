@@ -32,7 +32,7 @@ class PHPMarkdownExtraDriver extends PHPMarkdownDriver
      */
     public function checkRequirements()
     {
-        return (parent::checkRequirements() AND class_exists('Michelf\\MarkdownExtra'));
+        return (parent::checkRequirements() && class_exists('Michelf\\MarkdownExtra'));
     }
 
 }
