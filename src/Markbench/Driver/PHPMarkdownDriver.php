@@ -3,7 +3,6 @@
 namespace Markbench\Driver;
 
 use Markbench\DriverInterface;
-use Markbench\Exception\UnsupportedDriverException;
 use Michelf\Markdown;
 
 /**

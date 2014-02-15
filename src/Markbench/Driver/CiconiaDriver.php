@@ -4,7 +4,6 @@ namespace Markbench\Driver;
 
 use Ciconia\Ciconia;
 use Markbench\DriverInterface;
-use Markbench\Exception\UnsupportedDriverException;
 
 /**
  * @author Kazuyuki Hayashi <hayashi@valnur.net>

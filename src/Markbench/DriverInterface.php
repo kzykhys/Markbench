@@ -2,8 +2,6 @@
 
 namespace Markbench;
 
-use Markbench\Exception\UnsupportedDriverException;
-
 /**
  * @author Kazuyuki Hayashi <hayashi@valnur.net>
  */
