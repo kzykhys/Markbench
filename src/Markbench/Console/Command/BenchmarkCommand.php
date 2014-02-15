@@ -179,6 +179,7 @@ class BenchmarkCommand extends Command
     {
         $json_path = '';
         $json_paths = [
+            getcwd() . '/composer.json',
             __DIR__.'/../../../../composer.json',
             __DIR__.'/../../../../../../composer.json',
         ];
@@ -186,6 +187,7 @@ class BenchmarkCommand extends Command
         foreach ($json_paths as $path) {
             if (file_exists($path)) {
                 $json_path = $path;
+                break;
             }
         }
 
