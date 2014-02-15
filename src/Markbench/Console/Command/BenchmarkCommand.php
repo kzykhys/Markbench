@@ -198,7 +198,7 @@ class BenchmarkCommand extends Command
         /* @var \Composer\Package\Package[] $packages */
         $packages   = $repository->findPackages($package);
 
-        if ($count = count($packages) > 1) {
+        if (($count = count($packages)) > 1) {
             throw new TooMuchPackageFoundException();
         } elseif ($count == 0) {
             $git = new Git();
