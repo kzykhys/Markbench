@@ -12,19 +12,21 @@ Tested with latest stable version.
 
 ```
 $ php bin/markbench benchmark --profile=github-sample
-Runtime: PHP5.5.3
-Host:    Linux vm1 3.8.0-31-generic #46-Ubuntu SMP Tue Sep 10 20:03:44 UTC 2013 x86_64
+Runtime: PHP5.5.1-2
+Host:    Linux 3.2.0-4-amd64 #1 SMP Debian 3.2.32-1 x86_64
 Profile: Sample content from Github (http://github.github.com/github-flavored-markdown/sample_content.html) / 1000 times
 Class:   Markbench\Profile\GithubSampleProfile
 
 +----------------------+---------+---------+---------------+---------+--------------+
 | package              | version | dialect | duration (MS) | MEM (B) | PEAK MEM (B) |
 +----------------------+---------+---------+---------------+---------+--------------+
-| erusev/parsedown     | 0.4.6   |         | 10819         | 6291456 | 6553600      |
-| michelf/php-markdown | 1.3     |         | 36887         | 6815744 | 6815744      |
-| michelf/php-markdown | 1.3     | extra   | 49626         | 6815744 | 7340032      |
-| kzykhys/ciconia      | v0.1.4  |         | 64959         | 7340032 | 7602176      |
-| kzykhys/ciconia      | v0.1.4  | gfm     | 68987         | 7077888 | 7602176      |
+| cebe/markdown        | 0.9.0   |         | 2930          | 7602176 | 7602176      |
+| erusev/parsedown     | 0.9.4   |         | 3530          | 7602176 | 7602176      |
+| cebe/markdown        | 0.9.0   | gfm     | 3674          | 7602176 | 7602176      |
+| michelf/php-markdown | 1.4.0   |         | 8702          | 7864320 | 7864320      |
+| michelf/php-markdown | 1.4.0   | extra   | 12427         | 7864320 | 8126464      |
+| kzykhys/ciconia      | v1.0.3  |         | 15583         | 8650752 | 8912896      |
+| kzykhys/ciconia      | v1.0.3  | gfm     | 18549         | 8912896 | 9175040      |
 +----------------------+---------+---------+---------------+---------+--------------+
 ```
 
@@ -34,6 +36,7 @@ Tested parsers
 * michelf/php-markdown (Github, Packagist)
 * kzykhys/ciconia (Github, Packagist)
 * erusev/parsedown (Github, Packagist)
+* cebe/markdown (Github, Packagist)
 
 Internals
 ---------
