@@ -12,31 +12,31 @@ Tested with latest stable version.
 
 ```
 $ php bin/markbench benchmark --profile=github-sample
-Runtime: PHP5.5.1-2
-Host:    Linux 3.2.0-4-amd64 #1 SMP Debian 3.2.32-1 x86_64
+Runtime: PHP5.5.9
+Host:    Linux testing-worker-linux-9-1-25355-linux-14-19501860 2.6.32-042stab079.5 #1 SMP Fri Aug 2 17:16:15 MSK 2013 x86_64
 Profile: Sample content from Github (http://github.github.com/github-flavored-markdown/sample_content.html) / 1000 times
 Class:   Markbench\Profile\GithubSampleProfile
 
-+----------------------+---------+---------+---------------+---------+--------------+
-| package              | version | dialect | duration (MS) | MEM (B) | PEAK MEM (B) |
-+----------------------+---------+---------+---------------+---------+--------------+
-| cebe/markdown        | 0.9.0   |         | 2930          | 7602176 | 7602176      |
-| erusev/parsedown     | 0.9.4   |         | 3530          | 7602176 | 7602176      |
-| cebe/markdown        | 0.9.0   | gfm     | 3674          | 7602176 | 7602176      |
-| michelf/php-markdown | 1.4.0   |         | 8702          | 7864320 | 7864320      |
-| michelf/php-markdown | 1.4.0   | extra   | 12427         | 7864320 | 8126464      |
-| kzykhys/ciconia      | v1.0.3  |         | 15583         | 8650752 | 8912896      |
-| kzykhys/ciconia      | v1.0.3  | gfm     | 18549         | 8912896 | 9175040      |
-+----------------------+---------+---------+---------------+---------+--------------+
++----------------------+---------+---------+---------------+----------+--------------+
+| package              | version | dialect | duration (MS) | MEM (B)  | PEAK MEM (B) |
++----------------------+---------+---------+---------------+----------+--------------+
+| erusev/parsedown     | 0.9.4   |         | 4183          | 9437184  | 9437184      |
+| cebe/markdown        | 0.9.2   |         | 5081          | 9437184  | 9699328      |
+| cebe/markdown        | 0.9.2   | gfm     | 6293          | 9437184  | 9699328      |
+| michelf/php-markdown | 1.4.0   |         | 15568         | 9699328  | 9699328      |
+| michelf/php-markdown | 1.4.0   | extra   | 23401         | 9699328  | 9961472      |
+| kzykhys/ciconia      | v1.0.3  |         | 32115         | 10747904 | 11010048     |
+| kzykhys/ciconia      | v1.0.3  | gfm     | 39654         | 10747904 | 11010048     |
++----------------------+---------+---------+---------------+----------+--------------+
 ```
 
 Tested parsers
 --------------
 
-* michelf/php-markdown (Github, Packagist)
-* kzykhys/ciconia (Github, Packagist)
-* erusev/parsedown (Github, Packagist)
-* cebe/markdown (Github, Packagist)
+* [michelf/php-markdown](https://github.com/michelf/php-markdown) [![Latest Stable Version](https://poser.pugx.org/michelf/php-markdown/v/stable.png)](https://packagist.org/packages/michelf/php-markdown)
+* [kzykhys/ciconia](https://github.com/kzykhys/Ciconia) [![Latest Stable Version](https://poser.pugx.org/kzykhys/ciconia/v/stable.png)](https://packagist.org/packages/kzykhys/ciconia)
+* [erusev/parsedown](https://github.com/erusev/parsedown) [![Latest Stable Version](https://poser.pugx.org/erusev/parsedown/v/stable.png)](https://packagist.org/packages/erusev/parsedown)
+* [cebe/markdown](https://github.com/cebe/markdown) [![Latest Stable Version](https://poser.pugx.org/cebe/markdown/v/stable.png)](https://packagist.org/packages/cebe/markdown)
 
 Internals
 ---------
@@ -74,12 +74,13 @@ bin/markbench benchmark
 ```
 
 ```
-$ php bin/markbench help benchmark
+$ bin/markbench help benchmark
 Usage:
- benchmark [-p|--profile[="..."]]
+ benchmark [--parser="..."] [-p|--profile[="..."]]
 
 Options:
- --profile (-p)        Name of a profile (default: "default")
+ --parser              Name of a parser. Available: cebe/markdown, cebe/markdown:gfm, kzykhys/ciconia, kzykhys/ciconia:gfm, erusev/parsedown, michelf/php-markdown, michelf/php-markdown:extra
+ --profile (-p)        Name of a profile. (default: "default")
  --help (-h)           Display this help message.
  --quiet (-q)          Do not output any message.
  --verbose (-v|vv|vvv) Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
