@@ -27,6 +27,38 @@ class BenchmarkCommand extends Command
     private $versions = [];
 
     /**
+     * @var \Markbench\DriverInterface[]
+     */
+    private $drivers = [];
+
+    /**
+     * {@inheritdoc}
+     */
+    public function __construct($name = null)
+    {
+        $finder = Finder::create()
+            ->in(__DIR__ . '/../../Driver')
+            ->files()
+            ->name('*Driver.php');
+
+        foreach ($finder as $file) {
+            /* @var \Symfony\Component\Finder\SplFileInfo $file */
+            $className = str_replace('.php', '', $file->getRelativePathname());
+            $fqcn      = 'Markbench\\Driver\\' . $className;
+            $driver    = new $fqcn();
+            $name      = $driver->getName();
+
+            if ($dialect = $driver->getDialect()) {
+                $name .= ':' . $dialect;
+            }
+
+            $this->drivers[$name] = $driver;
+        }
+
+        parent::__construct($name);
+    }
+
+    /**
      * {@inheritdoc}
      */
     protected function configure()
@@ -34,8 +66,8 @@ class BenchmarkCommand extends Command
         $this
             ->setName('benchmark')
             ->setDescription('Run a benchmark with selected parser and profile')
-            ->addOption('parser', '', InputOption::VALUE_REQUIRED, 'Name of a parser. Available: Ciconia, Parsedown, PHPMarkdown')
-            ->addOption('profile', 'p', InputOption::VALUE_OPTIONAL, 'Name of a profile', 'default')
+            ->addOption('parser', '', InputOption::VALUE_REQUIRED, 'Name of a parser. Available: ' . implode(', ', array_keys($this->drivers)))
+            ->addOption('profile', 'p', InputOption::VALUE_OPTIONAL, 'Name of a profile.', 'default')
         ;
     }
 
@@ -144,19 +176,7 @@ class BenchmarkCommand extends Command
      */
     protected function registerDrivers(Runner $runner, $parserName)
     {
-        $finder = Finder::create()
-            ->in(__DIR__ . '/../../Driver')
-            ->files()
-            ->name('*Driver.php');
-
-        foreach ($finder as $file) {
-            /* @var \Symfony\Component\Finder\SplFileInfo $file */
-
-            $className = str_replace('.php', '', $file->getRelativePathname());
-
-            $fqcn      = 'Markbench\\Driver\\' . $className;
-            $driver = new $fqcn();
-
+        foreach ($this->drivers as $driver) {
             $matchParser = (!$parserName || in_array($parserName, [
                 $driver->getName(),
                 $driver->getName().':'.$driver->getDialect()
