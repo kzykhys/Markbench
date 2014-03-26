@@ -223,10 +223,16 @@ class BenchmarkCommand extends Command
         if (($count = count($packages)) > 1) {
             throw new TooMuchPackageFoundException();
         } elseif ($count == 0) {
-            $git = new Git();
-            $git->setRepository(dirname($json_path));
+            try {
+                // get extension ver
+                $ext = new \ReflectionExtension($package);
+                return $ext->getVersion();
+            } catch (Exception $e) {
+                $git = new Git();
+                $git->setRepository(dirname($json_path));
 
-            return $git->describe->tags();
+                return $git->describe->tags();
+            }
         } else {
             return $packages[0]->getPrettyVersion();
         }
