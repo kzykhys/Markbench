@@ -6,7 +6,7 @@ use Markbench\DriverInterface;
 
 
 /**
- * @author Carsten Brandt <mail@cebe.cc>
+ * @author rhyzx <rhyzix@gmail.com>
  */
 class SundownDriver implements DriverInterface
 {
