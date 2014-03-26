@@ -7,6 +7,7 @@ php:
 before_script:
     - curl -s http://getcomposer.org/installer | php
     - php composer.phar update --dev --no-interaction
+    - pecl install -f sundown
 
 script:
     - php bin/markbench benchmark --profile=blank
