@@ -13,20 +13,20 @@ Tested with latest stable version.
 ```
 $ php bin/markbench benchmark --profile=github-sample
 Runtime: PHP5.5.9
-Host:    Linux testing-worker-linux-9-1-25355-linux-14-19501860 2.6.32-042stab079.5 #1 SMP Fri Aug 2 17:16:15 MSK 2013 x86_64
+Host:    Linux testing-worker-linux-3-2-18579-linux-14-21570148 2.6.32-042stab079.5 #1 SMP Fri Aug 2 17:16:15 MSK 2013 x86_64
 Profile: Sample content from Github (http://github.github.com/github-flavored-markdown/sample_content.html) / 1000 times
 Class:   Markbench\Profile\GithubSampleProfile
-
 +----------------------+---------+---------+---------------+----------+--------------+
 | package              | version | dialect | duration (MS) | MEM (B)  | PEAK MEM (B) |
 +----------------------+---------+---------+---------------+----------+--------------+
-| erusev/parsedown     | 0.9.4   |         | 4183          | 9437184  | 9437184      |
-| cebe/markdown        | 0.9.2   |         | 5081          | 9437184  | 9699328      |
-| cebe/markdown        | 0.9.2   | gfm     | 6293          | 9437184  | 9699328      |
-| michelf/php-markdown | 1.4.0   |         | 15568         | 9699328  | 9699328      |
-| michelf/php-markdown | 1.4.0   | extra   | 23401         | 9699328  | 9961472      |
-| kzykhys/ciconia      | v1.0.3  |         | 32115         | 10747904 | 11010048     |
-| kzykhys/ciconia      | v1.0.3  | gfm     | 39654         | 10747904 | 11010048     |
+| sundown              | 0.3.11  |         | 902           | 9437184  | 9437184      |
+| erusev/parsedown     | 0.9.4   |         | 4122          | 9699328  | 9961472      |
+| cebe/markdown        | 0.9.2   |         | 5323          | 9699328  | 9699328      |
+| cebe/markdown        | 0.9.2   | gfm     | 5660          | 9699328  | 9699328      |
+| michelf/php-markdown | 1.4.0   |         | 14871         | 9699328  | 9961472      |
+| michelf/php-markdown | 1.4.0   | extra   | 21313         | 9961472  | 9961472      |
+| kzykhys/ciconia      | v1.0.3  |         | 28878         | 11010048 | 11272192     |
+| kzykhys/ciconia      | v1.0.3  | gfm     | 34663         | 11010048 | 11534336     |
 +----------------------+---------+---------+---------------+----------+--------------+
 ```
 
@@ -37,6 +37,7 @@ Tested parsers
 * [kzykhys/ciconia](https://github.com/kzykhys/Ciconia) [![Latest Stable Version](https://poser.pugx.org/kzykhys/ciconia/v/stable.png)](https://packagist.org/packages/kzykhys/ciconia)
 * [erusev/parsedown](https://github.com/erusev/parsedown) [![Latest Stable Version](https://poser.pugx.org/erusev/parsedown/v/stable.png)](https://packagist.org/packages/erusev/parsedown)
 * [cebe/markdown](https://github.com/cebe/markdown) [![Latest Stable Version](https://poser.pugx.org/cebe/markdown/v/stable.png)](https://packagist.org/packages/cebe/markdown)
+* [chobie/php-sundown](https://github.com/chobie/php-sundown) [**Extension**](http://pecl.php.net/package/sundown)
 
 Internals
 ---------
@@ -56,6 +57,7 @@ Runner
 
 * PHP5.4+
 * Compiled with --enable-pcntl
+* sundown `> pecl install -f sundown`
 
 Add a parser
 ------------
