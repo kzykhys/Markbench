@@ -12,22 +12,23 @@ Tested with latest stable version.
 
 ```
 $ php bin/markbench benchmark --profile=github-sample
-Runtime: PHP5.5.9
-Host:    Linux testing-worker-linux-9-1-25355-linux-14-19501860 2.6.32-042stab079.5 #1 SMP Fri Aug 2 17:16:15 MSK 2013 x86_64
+Runtime: PHP5.5.16
+Host:    Linux testing-worker-linux-6-1-30039-linux-11-36264561 2.6.32-042stab090.5 #1 SMP Sat Jun 21 00:15:09 MSK 2014 x86_64
 Profile: Sample content from Github (http://github.github.com/github-flavored-markdown/sample_content.html) / 1000 times
 Class:   Markbench\Profile\GithubSampleProfile
 
-+----------------------+---------+---------+---------------+----------+--------------+
-| package              | version | dialect | duration (MS) | MEM (B)  | PEAK MEM (B) |
-+----------------------+---------+---------+---------------+----------+--------------+
-| erusev/parsedown     | 0.9.4   |         | 4183          | 9437184  | 9437184      |
-| cebe/markdown        | 0.9.2   |         | 5081          | 9437184  | 9699328      |
-| cebe/markdown        | 0.9.2   | gfm     | 6293          | 9437184  | 9699328      |
-| michelf/php-markdown | 1.4.0   |         | 15568         | 9699328  | 9699328      |
-| michelf/php-markdown | 1.4.0   | extra   | 23401         | 9699328  | 9961472      |
-| kzykhys/ciconia      | v1.0.3  |         | 32115         | 10747904 | 11010048     |
-| kzykhys/ciconia      | v1.0.3  | gfm     | 39654         | 10747904 | 11010048     |
-+----------------------+---------+---------+---------------+----------+--------------+
++---------------------------+---------+------------+---------------+----------+--------------+
+| package                   | version | dialect    | duration (MS) | MEM (B)  | PEAK MEM (B) |
++---------------------------+---------+------------+---------------+----------+--------------+
+| cebe/markdown             | 0.9.2   |            | 7518          | 10485760 | 10485760     |
+| cebe/markdown             | 0.9.2   | gfm        | 8046          | 10485760 | 10485760     |
+| erusev/parsedown          | 1.0.1   |            | 8503          | 10485760 | 10485760     |
+| michelf/php-markdown      | 1.4.1   |            | 19629         | 10747904 | 10747904     |
+| michelf/php-markdown      | 1.4.1   | extra      | 29925         | 10747904 | 11010048     |
+| kzykhys/ciconia           | v1.0.2  |            | 49836         | 11796480 | 12058624     |
+| kzykhys/ciconia           | v1.0.2  | gfm        | 62153         | 11796480 | 12058624     |
+| colinodell/commonmark-php | 0.1.1   | commonmark | 64084         | 14155776 | 14155776     |
++---------------------------+---------+------------+---------------+----------+--------------+
 ```
 
 Tested parsers
