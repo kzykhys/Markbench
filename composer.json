@@ -24,6 +24,7 @@
         "kzykhys/git": "*"
     },
     "require-dev": {
+        "colinodell/commonmark-php": "*",
         "kzykhys/ciconia": "*",
         "michelf/php-markdown": "*",
         "erusev/parsedown": "*",
