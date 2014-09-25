@@ -37,6 +37,7 @@ Tested parsers
 * [kzykhys/ciconia](https://github.com/kzykhys/Ciconia) [![Latest Stable Version](https://poser.pugx.org/kzykhys/ciconia/v/stable.png)](https://packagist.org/packages/kzykhys/ciconia)
 * [erusev/parsedown](https://github.com/erusev/parsedown) [![Latest Stable Version](https://poser.pugx.org/erusev/parsedown/v/stable.png)](https://packagist.org/packages/erusev/parsedown)
 * [cebe/markdown](https://github.com/cebe/markdown) [![Latest Stable Version](https://poser.pugx.org/cebe/markdown/v/stable.png)](https://packagist.org/packages/cebe/markdown)
+* [colinodell/commonmark-php](https://github.com/colinodell/commonmark-php) [![Latest Stable Version](https://poser.pugx.org/colinodell/commonmark-php/v/stable.png)](https://packagist.org/packages/colinodell/commonmark-php)
 
 Internals
 ---------
