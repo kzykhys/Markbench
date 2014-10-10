@@ -5,13 +5,13 @@ namespace Markbench\Driver;
 use Markbench\DriverInterface;
 
 /**
- * @author Kazuyuki Hayashi <hayashi@valnur.net>
+ * @author Carsten Brandt <mail@cebe.cc>
  */
-class ParsedownDriver implements DriverInterface
+class ParsedownExtraDriver implements DriverInterface
 {
 
     /**
-     * @var \Parsedown
+     * @var \ParsedownExtra
      */
     private $parsedown;
 
@@ -20,7 +20,7 @@ class ParsedownDriver implements DriverInterface
      */
     public function initialize()
     {
-        $this->parsedown = \Parsedown::instance();
+        $this->parsedown = \ParsedownExtra::instance();
     }
 
     /**
@@ -36,7 +36,7 @@ class ParsedownDriver implements DriverInterface
      */
     public function getName()
     {
-        return 'erusev/parsedown';
+        return 'erusev/parsedown-extra';
     }
 
     /**
@@ -44,7 +44,7 @@ class ParsedownDriver implements DriverInterface
      */
     public function getDialect()
     {
-        return null;
+        return 'extra';
     }
 
     /**
@@ -52,7 +52,7 @@ class ParsedownDriver implements DriverInterface
      */
     public function checkRequirements()
     {
-        return class_exists('Parsedown');
+        return class_exists('ParsedownExtra');
     }
 
 }

@@ -27,6 +27,7 @@
         "kzykhys/ciconia": "*",
         "michelf/php-markdown": "*",
         "erusev/parsedown": "*",
+        "erusev/parsedown-extra": "*",
         "cebe/markdown": "*"
     },
     "bin": ["bin/markbench"]
