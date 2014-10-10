@@ -2,25 +2,26 @@
 
 namespace Markbench\Driver;
 
+use cebe\markdown\MarkdownExtra;
 use Markbench\DriverInterface;
 
 /**
- * @author Kazuyuki Hayashi <hayashi@valnur.net>
+ * @author Carsten Brandt <mail@cebe.cc>
  */
-class ParsedownDriver implements DriverInterface
+class CebeMarkdownExtraDriver implements DriverInterface
 {
 
     /**
-     * @var \Parsedown
+     * @var MarkdownExtra
      */
-    private $parsedown;
+    private $markdown;
 
     /**
      * {@inheritdoc}
      */
     public function initialize()
     {
-        $this->parsedown = \Parsedown::instance();
+        $this->markdown = new MarkdownExtra();
     }
 
     /**
@@ -28,7 +29,7 @@ class ParsedownDriver implements DriverInterface
      */
     public function run($markdown = '')
     {
-        return $this->parsedown->text($markdown);
+        return $this->markdown->parse($markdown);
     }
 
     /**
@@ -36,7 +37,7 @@ class ParsedownDriver implements DriverInterface
      */
     public function getName()
     {
-        return 'erusev/parsedown';
+        return 'cebe/markdown';
     }
 
     /**
@@ -44,7 +45,7 @@ class ParsedownDriver implements DriverInterface
      */
     public function getDialect()
     {
-        return null;
+        return 'extra';
     }
 
     /**
@@ -52,7 +53,7 @@ class ParsedownDriver implements DriverInterface
      */
     public function checkRequirements()
     {
-        return class_exists('Parsedown');
+        return class_exists('cebe\markdown\MarkdownExtra');
     }
 
 }
