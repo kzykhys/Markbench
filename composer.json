@@ -25,6 +25,7 @@
     },
     "require-dev": {
         "kzykhys/ciconia": "*",
+        "league/commonmark": "*",
         "michelf/php-markdown": "*",
         "erusev/parsedown": "*",
         "cebe/markdown": "*"
